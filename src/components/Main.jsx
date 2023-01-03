@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-// import Box from '@mui/material/Box';
-// import Grid from '@mui/material/Grid';
 import { useForm } from "react-hook-form";
 import Button from "@mui/material/Button";
 import "./main.css";
 import PdfDownload from "./PdfDownload";
 import Uploadcv from "./Uploadcv";
 import Fab from "@mui/material/Fab";
-// import AddIcon from '@mui/icons-material/Add';
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import TextField from "@mui/material/TextField";
 import './main.css'
@@ -99,19 +96,56 @@ const Main = () => {
       {message.length > 0
         ? message.map((item, i) => {
             return (
-              <div key={i}>
+              <div key={i}  style={{
+                padding:'5px',
+                borderStyle:'solid',
+                width: '50ch',
+                padding:'3px',
+                borderWidth:'1px',
+                alignItems:'center',
+              justifyContent:'center',
+              display: 'flex',
+              marginLeft:'25rem',
+
                 
-                <p className="prag">
+
+              }}>
+                
+                <div style={{
+                padding:'5px',
+               fontSize:'20px',
+              display:'flex',
+              
+              textAlign:'center',
+              alignItems:'center',
+              justifyContent:'center',
+              display: 'flex'
+
+              }}>
                  
-                  {i + 1}. {item.firstName} : {item.lastName}{" "}
-                  <DeleteRoundedIcon
+               <p style={{
+                marginLeft:'5px'
+               }}> {i + 1}. </p>  
+               <p style={{
+                marginLeft:'25px'
+               }}>{item.firstName}: </p>
+                  <p style={{
+                marginLeft:'25px'
+               }}> {item.lastName}</p>
+                  
+                  <DeleteRoundedIcon 
+                  sx={{
+                    padding:'5px',
+                    marginTop:'1rem',
+                     marginLeft:'5rem',
+                  }}
                     onClick={() => {
                       setMessage(
                         message.filter((i) => item.lastName !== i.lastName)
                       );
                     }}
                   />
-                </p>
+                </div>
               </div>
             );
           })

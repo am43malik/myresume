@@ -104,14 +104,23 @@ for (let index = 0; index < secondDonorPdfDoc.getPages().length; index++) {
 
   return (
     <div>
-      <Button onClick={createPdf} variant="contained" color="secondary">
+      <Button     sx={{
+        m:'2rem',
+        width: '30ch',
+      }} onClick={createPdf} variant="contained" color="secondary">
         Download
       </Button>
 
       <div>
+        
         <input
+        style={{
+          border: '2px solid rgb(156,39,176)',
+           padding:'5px',
+           background:'rgb(156,39,176)'
+        }}  
           type="file"
-          className="input-file"
+          
           name="imgUpload"
           accept=".pdf"
           onChange={getBase64}
