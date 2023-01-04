@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import $ from 'jquery';
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { renderToString } from "react-dom/server";
 import Button from "@mui/material/Button";
@@ -7,8 +7,15 @@ import Button from "@mui/material/Button";
 import logo from "../assets/newlogo.png";
 import Uploadcv from "./Uploadcv";
 import jsPDF from "jspdf";
+import './pdf.css'
+import styled from 'styled-components';
+import Test from "./Test";
+import html2canvas from "html2canvas";
+import jsPdf from "jspdf";
 
-var name;
+
+
+
 const PdfDownload = ({ message }) => {
   const [item, setItem] = useState([]);
   console.log(message, "lllll");
@@ -22,11 +29,17 @@ const PdfDownload = ({ message }) => {
 
     setItem(byteArray);
   };
+  
 
- 
+
   const Prints = () => (
-    <div>
-     <table>  
+    <div >
+
+
+
+  
+
+     {/* <table>  
      <tr>
         <th> SrNo</th>
         <th>Key</th>
@@ -39,7 +52,7 @@ const PdfDownload = ({ message }) => {
        return(
         
             <tr key={i}>
-          <td style={{ color:'red',height:'3rem',fontSize:'12px'}}>{i+1}</td>
+          <td >{i+1}</td>
           <td style={{ color:'red',height:'3rem',fontSize:'12px'}}>{item.firstName}</td>
           <td style={{ color:'red',height:'3rem',fontSize:'12px'}}>{item.lastName}</td>
           </tr>
@@ -48,7 +61,36 @@ const PdfDownload = ({ message }) => {
         })
       }
      
-     </table>
+     </table> */}
+
+
+
+
+<table class="ui celled table">
+  <thead>
+    <tr><th>Name</th>
+    <th>Age</th>
+    <th>Job</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td data-label="Name">James</td>
+      <td data-label="Age">24</td>
+      <td data-label="Job">Engineer</td>
+    </tr>
+    <tr>
+      <td data-label="Name">Jill</td>
+      <td data-label="Age">26</td>
+      <td data-label="Job">Engineer</td>
+    </tr>
+    <tr>
+      <td data-label="Name">Elyse</td>
+      <td data-label="Age">24</td>
+      <td data-label="Job">Designer</td>
+    </tr>
+  </tbody>
+</table>
+
     </div>
   );
 
@@ -67,6 +109,10 @@ const PdfDownload = ({ message }) => {
     pdf.fromHTML(string,12, 53, {
       'width': 760
      });
+    
+    
+
+
     console.log(pdf.output("arraybuffer"), "pdf");
   
    
@@ -126,6 +172,20 @@ for (let index = 0; index < secondDonorPdfDoc.getPages().length; index++) {
           onChange={getBase64}
         />
       </div>
+
+
+
+
+      <div className="zima">
+<h1 className="text"> Header </h1>
+
+<p>  content  </p>
+  
+</div>
+
+{/* <button id="getPDF" onclick={getPDF}>Download PDF</button> */}
+
+
     </div>
   );
 };

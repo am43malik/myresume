@@ -12,6 +12,32 @@ import './main.css'
 const Main = () => {
   const [firstName, setFirstName] = useState([]);
   const [lastName, setLastName] = useState([]);
+  const [positionApplyingLocation, setPositionApplyingLocation] = useState([]);
+  const [dayOfSourcing, setDayOfSourcing] = useState([]);
+  const [nameoftheCandidate, setNameoftheCandidate] = useState([]);
+  const [contactNumber,setContactNumber] = useState([]);
+  const [emailId,setEmailId] = useState([]);
+  const [age,setAge] = useState([]);
+  const [highestQualification,setHighestQualification] = useState([]);
+  const [currentLocation,setCurrentLocation] = useState([]);
+  const [currentCompany,setCurrentCompany] = useState([]);
+  const [currentDesignation,setCurrentDesignation] = useState([]);
+  const [currentProduct, setCurrentProduct] = useState([]);
+  const [avgTicketSize,setAvgTicketSize] = useState([]);
+  const [roi,setRoi] = useState([]);
+  const [averageBuisness,setAverageBuisness] = useState([]);
+  const [naoOfTeamMembers,setNaoOfTeamMembers] = useState([]);
+  const [noofDSA,setNoofDSA] = useState([]);
+  const [totalYearsofExp,setTotalYearsofExp] = useState([]);
+  const [relevantYearsofExp,setRelevantYearsofExp] = useState([]);
+  const [currentCTC,setCurrentCTC] = useState([]);
+  const [expectedCTC,setExpectedCTC] = useState([]);
+  const [noticePeriod,setNoticePeriod] = useState([]);
+  const [reasonforChange,setReasonforChange] = useState([]);
+  const [remarks,setRemarks] = useState([]);
+
+
+
   const [message, setMessage] = useState([]);
 
   
@@ -30,6 +56,10 @@ const Main = () => {
     var obj = {
       firstName,
       lastName,
+      dayOfSourcing,
+      nameoftheCandidate,contactNumber,emailId,age,highestQualification,currentLocation,currentCompany,
+      currentDesignation,currentProduct,avgTicketSize,roi,averageBuisness,naoOfTeamMembers,noofDSA,
+      totalYearsofExp,relevantYearsofExp,currentCTC,expectedCTC,noticePeriod,reasonforChange,remarks   
     };
     setMessage([...message, obj]);
     console.log(message, "message");
@@ -39,11 +69,63 @@ const Main = () => {
   return (
     <div >
       <form onSubmit={handleSubmit}>
-        <div >
+        <div  style={{
+          marginTop:'5rem',
+          padding:'1rem'
+        
+        }} >
+
+        <TextField id="outlined-basic" variant="outlined"    sx={{m:'1.5rem',width: '30ch'}}    label="Position Applying For & Location"   value={positionApplyingLocation}  onChange={(event) => {
+            setPositionApplyingLocation(event.target.value);}} />
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Day Of Sourcing"   value={dayOfSourcing}  onChange={(event) => {
+            setDayOfSourcing(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Name of the Candidate"  value={nameoftheCandidate}   onChange={(event) => {
+            setNameoftheCandidate(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Contact Number"   value={contactNumber}  onChange={(event) => {
+            setContactNumber(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Email Id"   value={emailId}  onChange={(event) => {
+            setEmailId(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Age"   value={age}  onChange={(event) => {
+            setAge(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Highest Qualification"   value={highestQualification}  onChange={(event) => {
+            setHighestQualification(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Current Location"   value={currentLocation}  onChange={(event) => {
+            setCurrentLocation(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Current Company"   value={currentCompany}  onChange={(event) => {
+            setCurrentCompany(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Current Designation"   value={currentDesignation}  onChange={(event) => {
+            setCurrentDesignation(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Current Product"   value={currentProduct}  onChange={(event) => {
+            setCurrentProduct(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Avg Ticket Size"   value={avgTicketSize}  onChange={(event) => {
+            setAvgTicketSize(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="ROI"    value={roi} onChange={(event) => {
+            setRoi(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Average Buisness / Portfolio"  value={averageBuisness}   onChange={(event) => {
+            setAverageBuisness(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="No Of Team Members"  value={naoOfTeamMembers}   onChange={(event) => {
+            setNaoOfTeamMembers(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="No. of DSA"  value={noofDSA}   onChange={(event) => {
+            setNoofDSA(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Total Years of Exp"  value={totalYearsofExp}   onChange={(event) => {
+            setTotalYearsofExp(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Relevant Years of Exp"  value={relevantYearsofExp}   onChange={(event) => {
+            setRelevantYearsofExp(event.target.value);}}/>
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Current CTC"  value={currentCTC}   onChange={(event) => {
+            setCurrentCTC(event.target.value);}}/>
+            <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Expected CTC "  value={expectedCTC}   onChange={(event) => {
+            setExpectedCTC(event.target.value);}}/>
+            <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Notice Period"  value={noticePeriod}   onChange={(event) => {
+            setNoticePeriod(event.target.value);}}/>
+            <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Reason For Change"  value={reasonforChange}   onChange={(event) => {
+            setReasonforChange(event.target.value);}}/>
+             <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Remarks "  value={remarks}   onChange={(event) => {
+            setRemarks(event.target.value);}}/>
+  
         <TextField
           sx={{
-            marginTop:'2rem',
-             marginLeft:'2rem',
+            marginTop:'5rem',
+            //  marginLeft:'1rem',
              width: '50ch'
             
           }}
@@ -60,8 +142,8 @@ const Main = () => {
         
         <TextField
          sx={{
-          marginTop:'2rem',
-          marginLeft:'5rem',
+          marginTop:'3rem',
+          // marginLeft:'4px',
           width: '50ch',
           // display:'flex'
           
