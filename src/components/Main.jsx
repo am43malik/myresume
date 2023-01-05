@@ -56,6 +56,7 @@ const Main = () => {
     var obj = {
       firstName,
       lastName,
+      positionApplyingLocation,
       dayOfSourcing,
       nameoftheCandidate,contactNumber,emailId,age,highestQualification,currentLocation,currentCompany,
       currentDesignation,currentProduct,avgTicketSize,roi,averageBuisness,naoOfTeamMembers,noofDSA,
@@ -216,11 +217,7 @@ const Main = () => {
                }}> {item.lastName}</p>
                   
                   <DeleteRoundedIcon 
-                  sx={{
-                    padding:'5px',
-                    marginTop:'1rem',
-                     marginLeft:'5rem',
-                  }}
+                  sx={{ padding:'5px', marginTop:'1rem', marginLeft:'5rem',}}
                     onClick={() => {
                       setMessage(
                         message.filter((i) => item.lastName !== i.lastName)

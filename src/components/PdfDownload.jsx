@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import $ from 'jquery';
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { renderToString } from "react-dom/server";
@@ -6,17 +6,50 @@ import Button from "@mui/material/Button";
 // import pdfe from "../assets/pdf.pdf";
 import logo from "../assets/newlogo.png";
 import Uploadcv from "./Uploadcv";
-import jsPDF from "jspdf";
+import {jsPDF} from "jspdf";
 import './pdf.css'
 import styled from 'styled-components';
 import Test from "./Test";
-import html2canvas from "html2canvas";
-import jsPdf from "jspdf";
 
+import autoTable from 'jspdf-autotable'
+import './pdfdownload.css'
 
+const PdfDownloadd=({message})=>{
+  useEffect(()=>{
+    var arrBody=[]
+    message.map((item)=>{
+      var datar=item.firstName+","+item.lastName
+      var arrBodyInn=[]
+      arrBodyInn.push(datar)
+      arrBody.push(arrBodyInn)
+      // autoTable(pdf, {
+      
+  
+      //   head: [["key","Value"]],
+      //   body: [
+      //     [item.lastName, ],
+      //     [item.lastName, ],
+         
+         
+      //   ],
+      // }
+      
+      // )
+    })
+  
+    console.log(arrBody+"","tt")
+  },[0])
+ 
+  return(
+    <></>
+  )
+}
 
 
 const PdfDownload = ({ message }) => {
+
+
+
   const [item, setItem] = useState([]);
   console.log(message, "lllll");
 
@@ -33,19 +66,19 @@ const PdfDownload = ({ message }) => {
 
 
   const Prints = () => (
-    <div >
+    <div > 
 
 
 
   
 
-     {/* <table>  
+     <table id='#my-table' className="mytbale">  
      <tr>
         <th> SrNo</th>
         <th>Key</th>
         <th>Value</th>
       </tr>
-      {
+      {/* {
       message.map((item,i)=>{
         console.log(message,"asdf")
         console.log(item,"item")
@@ -53,20 +86,20 @@ const PdfDownload = ({ message }) => {
         
             <tr key={i}>
           <td >{i+1}</td>
-          <td style={{ color:'red',height:'3rem',fontSize:'12px'}}>{item.firstName}</td>
-          <td style={{ color:'red',height:'3rem',fontSize:'12px'}}>{item.lastName}</td>
+          <td >{item.firstName}</td>
+          <td >{item.lastName}</td>
           </tr>
         
        )
         })
-      }
+      } */}
      
-     </table> */}
+     </table>
 
 
 
 
-<table class="ui celled table">
+{/* <table className="ui celled table" >
   <thead>
     <tr><th>Name</th>
     <th>Age</th>
@@ -89,7 +122,7 @@ const PdfDownload = ({ message }) => {
       <td data-label="Job">Designer</td>
     </tr>
   </tbody>
-</table>
+</table> */}
 
     </div>
   );
@@ -106,46 +139,261 @@ const PdfDownload = ({ message }) => {
 // });
     pdf.addImage(logo, "PNG", 130, 2, 50, 50);
     const string = renderToString(<Prints /> );
-    pdf.fromHTML(string,12, 53, {
-      'width': 760
-     });
-    
+    // pdf.html(string,12, 53);\
+    console.log(message,'fgf')
+
+    var arrBody=[]
+    var arrBodyOut=[]
+    //age
+    arrBodyOut.push("Position Applying For & Location")
+    arrBodyOut.push(message[0].positionApplyingLocation)
+    arrBody.push(arrBodyOut)
+    //age
+    var arrBodyOut1=[]
+    var arrBodyOut2=[]
+    var arrBodyOut3=[]
+    var arrBodyOut4=[]
+    var arrBodyOut5=[]
+    var arrBodyOut6=[]
+    var arrBodyOut7=[]
+    var arrBodyOut8=[]
+    var arrBodyOut9=[]
+    var arrBodyOut10=[]
+    var arrBodyOut11=[]
+    var arrBodyOut12=[]
+    var arrBodyOut13=[]
+    var arrBodyOut14=[]
+    var arrBodyOut15=[]
+    var arrBodyOut16=[]
+    var arrBodyOut17=[]
+    var arrBodyOut18=[]
+    var arrBodyOut19=[]
+    var arrBodyOut20=[]
+    var arrBodyOut21=[]
+    var arrBodyOut22=[]
+   
+
+    arrBodyOut1.push("Day Of Sourcing")
+    arrBodyOut1.push(message[0].dayOfSourcing)
+    arrBody.push(arrBodyOut1)
+    //age
+
+ arrBodyOut2.push("Name of the Candidate" )
+ arrBodyOut2.push(message[0].nameoftheCandidate)
+ arrBody.push(arrBodyOut2)
+ //age //age
+    arrBodyOut3.push("Contact Number")
+    arrBodyOut3.push(message[0].contactNumber)
+    arrBody.push(arrBodyOut3)
+    //age //age
+    arrBodyOut4.push("Email Id")
+    arrBodyOut4.push(message[0].emailId)
+    arrBody.push(arrBodyOut4)
+    //age //age
+    arrBodyOut5.push("age")
+    arrBodyOut5.push(message[0].age)
+    arrBody.push(arrBodyOut5)
+    //age //age
+    arrBodyOut6.push("Highest Qualification" )
+    arrBodyOut6.push(message[0].highestQualification)
+    arrBody.push(arrBodyOut6)
+    //age //age
+    arrBodyOut7.push("Current Location" )
+    arrBodyOut7.push(message[0].currentLocation)
+    arrBody.push(arrBodyOut7)
+    //age //age
+    arrBodyOut8.push("Current Company")
+    arrBodyOut8.push(message[0].currentCompany)
+    arrBody.push(arrBodyOut8)
+    //age //age
+    arrBodyOut9.push("Current Designation")
+    arrBodyOut9.push(message[0].currentDesignation)
+    arrBody.push(arrBodyOut9)
+    //age //age
+    arrBodyOut10.push("Current Product")
+    arrBodyOut10.push(message[0].currentProduct)
+    arrBody.push(arrBodyOut10)
+    //age //age
+    arrBodyOut11.push("Avg Ticket Size" )
+    arrBodyOut11.push(message[0].avgTicketSize)
+    arrBody.push(arrBodyOut11)
+    //age //age
+    arrBodyOut12.push("ROI")
+    arrBodyOut12.push(message[0].roi)
+    arrBody.push(arrBodyOut12)
+    //age //age
+    arrBodyOut13.push("Average Buisness / Portfolio")
+    arrBodyOut13.push(message[0].averageBuisness)
+    arrBody.push(arrBodyOut13)
+    //age //age
+    arrBodyOut14.push("No Of Team Members")
+    arrBodyOut14.push(message[0].naoOfTeamMembers)
+    arrBody.push(arrBodyOut14)
+    //age //age
+    arrBodyOut15.push("No. of DSA")
+    arrBodyOut15.push(message[0].noofDSA)
+    arrBody.push(arrBodyOut15)
+    //age //age
+    arrBodyOut16.push("Total Years of Exp")
+    arrBodyOut16.push(message[0].totalYearsofExp)
+    arrBody.push(arrBodyOut16)
+    //age //age
+    arrBodyOut17.push("Relevant Years of Exp")
+    arrBodyOut17.push(message[0].relevantYearsofExp)
+    arrBody.push(arrBodyOut17)
+    //age //age
+    arrBodyOut18.push("Current CTC")
+    arrBodyOut18.push(message[0].currentCTC)
+    arrBody.push(arrBodyOut18)
+    //age //age
+    arrBodyOut19.push("Expected CTC " )
+    arrBodyOut19.push(message[0].expectedCTC)
+    arrBody.push(arrBodyOut19)
+    //age //age
+    arrBodyOut20.push("Notice Period")
+    arrBodyOut20.push(message[0].noticePeriod)
+    arrBody.push(arrBodyOut20)
+    //age //age
+    arrBodyOut21.push("Reason For Change")
+    arrBodyOut21.push(message[0].reasonforChange)
+    arrBody.push(arrBodyOut21)
+    //age //age
+    arrBodyOut22.push("Remarks ")
+    arrBodyOut22.push(message[0].remarks)
+    arrBody.push(arrBodyOut22)
     
 
+    message.map((item,index)=>{
+      var datar=item.firstName+","+item.lastName
+      var arrBodyInn=[]
 
-    console.log(pdf.output("arraybuffer"), "pdf");
+      arrBodyInn.push(item.firstName)
+      arrBodyInn.push(item.lastName)
+      arrBody.push(arrBodyInn)
+      // autoTable(pdf, {
+      
+  
+      //   head: [["key","Value"]],
+      //   body: [
+      //     [item.lastName, ],
+      //     [item.lastName, ],
+         
+         
+      //   ],
+      // }
+      
+      // )
+    })
+    console.log([arrBody],"abc");
+    autoTable(pdf, {
+      
+
+        head: [["key","Value"]],
+        body: arrBody,
+      }
+      
+      )
+    const firstDonorPdfBytes = pdf.output("arraybuffer")
+        const secondDonorPdfBytes = item.buffer;
+    
+        const firstDonorPdfDoc = await PDFDocument.load(firstDonorPdfBytes);
+        const secondDonorPdfDoc = await PDFDocument.load(secondDonorPdfBytes);
+    
+        const pdfDoc = await PDFDocument.create();
+    
+      const [firstDonorPage] = await pdfDoc.copyPages(firstDonorPdfDoc, [0])
+    
+      pdfDoc.addPage(firstDonorPage )
+    
+    
+    console.log(secondDonorPdfDoc.getPages(),"pages")
+    
+    for (let index = 0; index < secondDonorPdfDoc.getPages().length; index++) {
+      // const element = array[index];
+      const [secondDonorPage] = await pdfDoc.copyPages(secondDonorPdfDoc,[index])
+      pdfDoc.addPage( secondDonorPage)
+      
+    }
+    
+    
+    
+    
+    
+        const pdfBytes = await pdfDoc.save();
+    
+        require("downloadjs")(pdfBytes, message.firstName, "application/pdf");
+  //   pdf.html(string , {
+  //     callback:async function (pdf) {
+  //       // return pdf
+  //       //  pdf.save();
+  //       const firstDonorPdfBytes = pdf.output("arraybuffer")
+  //       const secondDonorPdfBytes = item.buffer;
+    
+  //       const firstDonorPdfDoc = await PDFDocument.load(firstDonorPdfBytes);
+  //       const secondDonorPdfDoc = await PDFDocument.load(secondDonorPdfBytes);
+    
+  //       const pdfDoc = await PDFDocument.create();
+    
+  //     const [firstDonorPage] = await pdfDoc.copyPages(firstDonorPdfDoc, [0])
+    
+  //     pdfDoc.addPage(firstDonorPage )
+    
+    
+  //   console.log(secondDonorPdfDoc.getPages(),"pages")
+    
+  //   for (let index = 0; index < secondDonorPdfDoc.getPages().length; index++) {
+  //     // const element = array[index];
+  //     const [secondDonorPage] = await pdfDoc.copyPages(secondDonorPdfDoc,[index])
+  //     pdfDoc.addPage( secondDonorPage)
+      
+  //   }
+    
+    
+    
+    
+    
+  //       const pdfBytes = await pdfDoc.save();
+    
+  //       require("downloadjs")(pdfBytes, message.firstName, "application/pdf");
+  //     },
+  //     x: 10,
+  //     y: 10
+  //  });
+
+
+    // console.log(pdf.output("arraybuffer"), "pdf");
   
    
     
-    const firstDonorPdfBytes = pdf.output("arraybuffer")
-    const secondDonorPdfBytes = item.buffer;
+//     const firstDonorPdfBytes = pdf.output("arraybuffer")
+//     const secondDonorPdfBytes = item.buffer;
 
-    const firstDonorPdfDoc = await PDFDocument.load(firstDonorPdfBytes);
-    const secondDonorPdfDoc = await PDFDocument.load(secondDonorPdfBytes);
+//     const firstDonorPdfDoc = await PDFDocument.load(firstDonorPdfBytes);
+//     const secondDonorPdfDoc = await PDFDocument.load(secondDonorPdfBytes);
 
-    const pdfDoc = await PDFDocument.create();
+//     const pdfDoc = await PDFDocument.create();
 
-  const [firstDonorPage] = await pdfDoc.copyPages(firstDonorPdfDoc, [0])
+//   const [firstDonorPage] = await pdfDoc.copyPages(firstDonorPdfDoc, [0])
 
-  pdfDoc.addPage(firstDonorPage )
+//   pdfDoc.addPage(firstDonorPage )
 
 
-console.log(secondDonorPdfDoc.getPages(),"pages")
+// console.log(secondDonorPdfDoc.getPages(),"pages")
 
-for (let index = 0; index < secondDonorPdfDoc.getPages().length; index++) {
-  // const element = array[index];
-  const [secondDonorPage] = await pdfDoc.copyPages(secondDonorPdfDoc,[index])
-  pdfDoc.addPage( secondDonorPage)
+// for (let index = 0; index < secondDonorPdfDoc.getPages().length; index++) {
+//   // const element = array[index];
+//   const [secondDonorPage] = await pdfDoc.copyPages(secondDonorPdfDoc,[index])
+//   pdfDoc.addPage( secondDonorPage)
   
-}
+// }
 
 
 
 
 
-    const pdfBytes = await pdfDoc.save();
+//     const pdfBytes = await pdfDoc.save();
 
-    require("downloadjs")(pdfBytes, message.firstName, "application/pdf");
+//     require("downloadjs")(pdfBytes, message.firstName, "application/pdf");
   }
 
   return (
