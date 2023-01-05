@@ -56,7 +56,7 @@ const Main = () => {
     var obj = {
       firstName,
       lastName,
-      positionApplyingLocation,
+       positionApplyingLocation,
       dayOfSourcing,
       nameoftheCandidate,contactNumber,emailId,age,highestQualification,currentLocation,currentCompany,
       currentDesignation,currentProduct,avgTicketSize,roi,averageBuisness,naoOfTeamMembers,noofDSA,
@@ -82,11 +82,11 @@ const Main = () => {
             setDayOfSourcing(event.target.value);}}/>
         <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Name of the Candidate"  value={nameoftheCandidate}   onChange={(event) => {
             setNameoftheCandidate(event.target.value);}}/>
-        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Contact Number"   value={contactNumber}  onChange={(event) => {
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}   type='number'     label="Contact Number"   value={contactNumber}  onChange={(event) => {
             setContactNumber(event.target.value);}}/>
-        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Email Id"   value={emailId}  onChange={(event) => {
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}   type='email'     label="Email Id"   value={emailId}  onChange={(event) => {
             setEmailId(event.target.value);}}/>
-        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Age"   value={age}  onChange={(event) => {
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}  type='number'      label="Age"   value={age}  onChange={(event) => {
             setAge(event.target.value);}}/>
         <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Highest Qualification"   value={highestQualification}  onChange={(event) => {
             setHighestQualification(event.target.value);}}/>
@@ -104,13 +104,13 @@ const Main = () => {
             setRoi(event.target.value);}}/>
         <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Average Buisness / Portfolio"  value={averageBuisness}   onChange={(event) => {
             setAverageBuisness(event.target.value);}}/>
-        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="No Of Team Members"  value={naoOfTeamMembers}   onChange={(event) => {
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}  type='number'       label="No Of Team Members"  value={naoOfTeamMembers}   onChange={(event) => {
             setNaoOfTeamMembers(event.target.value);}}/>
-        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="No. of DSA"  value={noofDSA}   onChange={(event) => {
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}   type='number'      label="No. of DSA"  value={noofDSA}   onChange={(event) => {
             setNoofDSA(event.target.value);}}/>
-        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}        label="Total Years of Exp"  value={totalYearsofExp}   onChange={(event) => {
+        <TextField id="outlined-basic" variant="outlined" sx={{m:'1.5rem',width: '30ch'}}    type='number'     label="Total Years of Exp"  value={totalYearsofExp}   onChange={(event) => {
             setTotalYearsofExp(event.target.value);}}/>
-        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Relevant Years of Exp"  value={relevantYearsofExp}   onChange={(event) => {
+        <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}  type='number'      label="Relevant Years of Exp"  value={relevantYearsofExp}   onChange={(event) => {
             setRelevantYearsofExp(event.target.value);}}/>
         <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Current CTC"  value={currentCTC}   onChange={(event) => {
             setCurrentCTC(event.target.value);}}/>
@@ -122,11 +122,12 @@ const Main = () => {
             setReasonforChange(event.target.value);}}/>
              <TextField id="outlined-basic" variant="outlined"  sx={{m:'1.5rem',width: '30ch'}}       label="Remarks "  value={remarks}   onChange={(event) => {
             setRemarks(event.target.value);}}/>
-  
-        <TextField
+    
+                  <div>
+                  <TextField
           sx={{
-            marginTop:'5rem',
-            //  marginLeft:'1rem',
+            marginTop:'3rem',
+              margin:'1rem',
              width: '50ch'
             
           }}
@@ -144,9 +145,9 @@ const Main = () => {
         <TextField
          sx={{
           marginTop:'3rem',
-          // marginLeft:'4px',
+           margin:'1rem',
           width: '50ch',
-          // display:'flex'
+          //
           
         }}
           id="outlined-basic"
@@ -160,6 +161,10 @@ const Main = () => {
             setLastName(event.target.value);
           }}
         />
+                  </div>
+
+
+      
         </div>
        
 
